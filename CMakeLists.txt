@@ -187,7 +187,7 @@ if(WIN32)
 endif(WIN32)
 
 # NOTE: Add iostreams to COMPONENTS list to enable bigfile_boost_iostreams_test
-find_package(Boost 1.38 COMPONENTS program_options thread system REQUIRED)
+find_package(Boost 1.38 COMPONENTS chrono program_options thread system REQUIRED)
 
 if(Boost_FOUND AND Boost_PROGRAM_OPTIONS_FOUND)
   include_directories(${Boost_INCLUDE_DIRS})
