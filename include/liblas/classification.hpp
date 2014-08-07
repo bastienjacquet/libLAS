@@ -50,7 +50,13 @@
 #include <ostream>
 #include <sstream>
 #include <stdexcept>
+#if defined(_MSC_VER) && _MSC_VER < 1700
+#include <boost/cstdint.hpp>
+using boost::uint8_t;
+using boost::uint32_t;
+#else
 #include <stdint.h>
+#endif
 
 // I hate you windows
 #ifdef _MSC_VER

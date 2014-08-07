@@ -39,8 +39,6 @@
  ****************************************************************************/
 
 #include <liblas/chipper.hpp>
-// boost
-#include <boost/cstdint.hpp>
 // std
 #include <algorithm>
 #include <cmath>

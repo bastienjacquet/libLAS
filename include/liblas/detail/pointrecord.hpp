@@ -42,7 +42,15 @@
 #ifndef LIBLAS_DETAIL_POINTRECORD_HPP_INCLUDED
 #define LIBLAS_DETAIL_POINTRECORD_HPP_INCLUDED
 
+#if defined(_MSC_VER) && _MSC_VER < 1700
+#include <boost/cstdint.hpp>
+using boost::int8_t;
+using boost::int32_t;
+using boost::uint8_t;
+using boost::uint16_t;
+#else
 #include <stdint.h>
+#endif
 
 namespace liblas { namespace detail {
 

@@ -44,7 +44,15 @@
 #define LIBLAS_DETAIL_INDEXCELL_HPP_INCLUDED
 
 #include <map>
+#if defined(_MSC_VER) && _MSC_VER < 1700
+#include <boost/cstdint.hpp>
+using boost::int16_t;
+using boost::uint8_t;
+using boost::uint32_t;
+using boost::uint64_t;
+#else
 #include <stdint.h>
+#endif
 
 namespace liblas { namespace detail {
 

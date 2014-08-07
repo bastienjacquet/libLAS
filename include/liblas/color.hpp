@@ -42,7 +42,13 @@
 #define LIBLAS_LASCOLOR_HPP_INCLUDED
 
 #include <liblas/export.hpp>
+#if defined(_MSC_VER) && _MSC_VER < 1700
+#include <boost/cstdint.hpp>
+using boost::uint16_t;
+using boost::uint32_t;
+#else
 #include <stdint.h>
+#endif
 
 // boost
 #include <boost/array.hpp>

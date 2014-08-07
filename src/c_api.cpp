@@ -73,7 +73,16 @@ typedef struct LASSchemaHS *LASSchemaH;
 typedef struct LASFilterHS *LASFilterH;
 
 
+#if defined(_MSC_VER) && _MSC_VER < 1700
+#include <boost/cstdint.hpp>
+using boost::int8_t;
+using boost::int32_t;
+using boost::uint8_t;
+using boost::uint16_t;
+using boost::uint32_t;
+#else
 #include <stdint.h>
+#endif
 // std
 #include <cstdio>
 #include <bitset>
