@@ -1184,7 +1184,7 @@ int GTIFSetFromOGISDefn( GTIF * psGTIF, const char *pszOGCWKT )
 /* -------------------------------------------------------------------- */
 //    poSRS = new OGRSpatialReference();
     poSRS = (OGRSpatialReference*)OSRNewSpatialReference(NULL);
-    if( poSRS->importFromWkt((char **) &pszOGCWKT) != OGRERR_NONE )
+    if( poSRS->importFromWkt(const_cast<char **>(&pszOGCWKT)) != OGRERR_NONE )
     {
         OGRSpatialReference::DestroySpatialReference(poSRS);
         return FALSE;
