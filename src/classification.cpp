@@ -105,8 +105,8 @@ std::string Classification::GetClassName() const
 uint8_t Classification::GetClass() const
 {
     bitset_type bits(m_flags);
-    
-    bitset_type const mask(static_cast<uint64_t>(class_table_size) - 1);
+
+    bitset_type const mask(static_cast<boost::uint64_t>(class_table_size) - 1);
     bits &= mask;
 
     uint32_t const index = static_cast<uint32_t>(bits.to_ulong());
@@ -120,7 +120,7 @@ void Classification::SetClass(uint32_t index)
 {
     check_class_index(index);
 
-    bitset_type binval(static_cast<uint64_t>(index));
+    bitset_type binval(static_cast<boost::uint64_t>(index));
     binval <<= 0;
 
     // Store value in bits 0,1,2,3,4
